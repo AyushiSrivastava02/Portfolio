@@ -1,0 +1,422 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f9;
+  color: #333;
+  line-height: 1.6;
+}
+
+h3.page-title {
+  font-weight: 700;
+  font-size: 2.5rem;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar {
+  background-color: #00897b;
+}
+
+.navbar .brand-logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+}
+
+.navbar .right a {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+.navbar .right a:hover {
+  color: #80cbc4;
+}
+
+/* First Section */
+.firstSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background: #f4f4f4;
+    border-radius: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    gap: 20px;
+}
+
+.leftSelection {
+    flex: 1;
+    font-size: 20px;
+    color: #333;
+    font-family: Arial, sans-serif;
+}
+
+.typing-effect {
+    display: inline-block;
+    font-size: 25px;
+    font-weight: bold;
+    color: #555;
+    margin-top: 10px;
+    border-right: 3px solid rgba(255, 255, 255, 0.75);
+    white-space: nowrap;
+    overflow: hidden;
+    width: 0;
+    animation: typing 3s steps(30) 1s forwards, blinkCaret 0.75s step-end infinite;
+}
+
+#role1 {
+    animation-delay: 0s;
+}
+
+#role2 {
+    animation-delay: 4s;
+}
+
+#element {
+    animation-delay: 8s;
+}
+
+.buttons {
+    margin-top: 20px;
+}
+
+.btn {
+    padding: 0px 20px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #45a049;
+}
+
+.rightSelection img {
+    width: 300px;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Typing effect animation */
+@keyframes typing {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+@keyframes blinkCaret {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+/* About Section */
+#about ul {
+  list-style: none;
+  padding-left: 0;
+  margin-top: 2rem;
+}
+
+#about ul li {
+  font-size: 1.1rem;
+  margin-bottom: 0.8rem;
+}
+
+#about ul li b {
+  font-weight: 700;
+}
+
+/* Skills Section */
+#skills .card-content {
+  padding: 2rem;
+}
+
+#skills .text-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+#skills .col {
+  margin: 1rem;
+  text-align: center;
+}
+
+#skills img {
+  max-width: 80px;
+  border-radius: 50%;
+}
+
+#skills .col p {
+  font-weight: 600;
+  margin-top: 0.8rem;
+}
+
+/* Projects Section */
+#projects {
+  background-color: #f4f4f4;
+  padding: 50px 0;
+}
+
+#projects .page-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 30px;
+  color: #00796b;
+}
+
+#projects .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  gap: 20px;
+}
+
+#projects .card {
+  width: 250px; /* Fixed width for square box */
+  height: 250px; /* Fixed height to make it square */
+  margin: 10px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  overflow: hidden; /* Ensures content doesn't overflow */
+  position: relative; /* For proper overlay */
+}
+
+#projects .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+#projects .card-content {
+  padding: 15px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 100%; /* Fill the full height */
+}
+
+#projects .card-title {
+  font-size: 1rem; /* Smaller title font */
+  font-weight: bold;
+  color: #00796b;
+  cursor: pointer;
+  text-align: center;
+}
+
+#projects .card-title:hover {
+  text-decoration: underline;
+}
+
+/* Reveal section - hidden by default */
+#projects .card-reveal {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.9);
+  padding: 15px;
+  box-sizing: border-box;
+  overflow-y: auto; /* Scrollable if content overflows */
+}
+
+/* Display card-reveal on hover */
+#projects .card:hover .card-reveal {
+  display: block;
+}
+
+#projects ul {
+  list-style: none;
+  padding: 0;
+}
+
+#projects ul li {
+  margin: 8px 0;
+}
+
+#projects ul li b {
+  font-weight: bold;
+}
+
+@media (max-width: 768px) {
+  #projects .container {
+    justify-content: space-evenly;
+  }
+
+  #projects .card {
+    width: 220px; /* Adjusts to slightly smaller square */
+    height: 220px; /* Keeps it square on smaller screens */
+  }
+}
+
+@media (max-width: 480px) {
+  #projects .page-title {
+    font-size: 1.8rem;
+  }
+
+  #projects .card {
+    width: 180px; /* Even smaller square for mobile */
+    height: 180px; /* Keeps it square on mobile devices */
+  }
+}
+
+
+/* Education Section */
+#education .card {
+  margin-bottom: 1.5rem;
+}
+
+#education .card-content p {
+  font-size: 1.1rem;
+}
+
+#education .brown-text {
+  color: #6d4c41;
+  font-weight: 600;
+}
+
+/* Contact Section */
+#contact {
+  background-color: #2c3e50;
+  padding: 60px 0;
+  color: white;
+  text-align: center;
+}
+
+#contact .page-title {
+  font-size: 2.5rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+}
+
+#contact .container {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+#contact p {
+  font-size: 1.1rem;
+  margin: 20px 0;
+}
+
+/* Floating Buttons Styling */
+.btn-floating {
+  width: 60px;
+  height: 60px;
+  line-height: 60px;
+  border-radius: 50%;
+  background-color: #3498db;
+  color: white;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+  display: inline-block;
+  margin-right: 15px;
+}
+
+.btn-floating:hover {
+  background-color: #2980b9;
+}
+
+/* Tooltip Styling */
+.tooltipped {
+  position: relative;
+}
+
+.tooltipped:hover:after {
+  content: attr(aria-label);
+  position: absolute;
+  bottom: 80%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #333;
+  color: white;
+  padding: 8px;
+  border-radius: 4px;
+  font-size: 1rem;
+  white-space: nowrap;
+  z-index: 9999;
+}
+
+.tooltipped:hover {
+  cursor: pointer;
+}
+
+/* LinkedIn Link Styling */
+#contact a {
+  text-decoration: none;
+  color: white;
+  font-size: 1rem;
+  display: inline-block;
+  margin-top: 15px;
+}
+
+#contact a:hover {
+  color: #2980b9;
+}
+
+#contact i {
+  margin-right: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #00897b;
+  padding: 1.5rem 0;
+  color: #ffffff;
+  text-align: center;
+}
+
+footer .footer-first h2 {
+  font-weight: 700;
+  font-size: 1.6rem;
+}
+
+footer .footer-second p {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .firstSection {
+      flex-direction: column;
+      text-align: center;
+  }
+
+  .firstSection .leftSelection {
+      margin-bottom: 2rem;
+  }
+
+  .firstSection .rightSelection img {
+      max-width: 200px;
+  }
+
+  #skills .card-content {
+      padding: 1rem;
+  }
+
+  .navbar .right {
+      display: none;
+  }
+}
